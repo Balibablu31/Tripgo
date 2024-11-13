@@ -1,16 +1,17 @@
 package hotel.reservation.services;
 
-import hotel.reservation.models.Hotel;
+import java.io.IOException;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import okhttp3.HttpUrl;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import java.io.IOException;
-import java.util.List;
 
 @Service
 public class HotelApiService {
@@ -27,7 +28,7 @@ public class HotelApiService {
     private final OkHttpClient client = new OkHttpClient();
     private final ObjectMapper objectMapper = new ObjectMapper();
 
-    public List<Hotel> getHotels(String locationId, String checkinDate, String checkoutDate) throws IOException {
+    public Map<String, Object> getHotels(String locationId, String checkinDate, String checkoutDate) throws IOException {
         // Build the URL with dynamic parameters
         HttpUrl.Builder urlBuilder = HttpUrl.parse(apiUrl).newBuilder();
         urlBuilder.addQueryParameter("id", locationId);
@@ -46,12 +47,15 @@ public class HotelApiService {
 
         // Execute the request and parse response
         try (Response response = client.newCall(request).execute()) {
-            if (!response.isSuccessful())
+            if (!response.isSuccessful()) {
                 throw new IOException("Unexpected code " + response);
+            }
 
-            // Deserialize JSON response to List<Hotel>
-            return objectMapper.readValue(response.body().string(),
-                    objectMapper.getTypeFactory().constructCollectionType(List.class, Hotel.class));
+            // Deserialize JSON response to Map<String, Object>
+            String responseBody = response.body().string();
+
+            // Parse the response into a Map
+            return objectMapper.readValue(responseBody, Map.class);
         }
     }
 }

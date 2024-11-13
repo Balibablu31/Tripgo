@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Hotel Reservation System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #519a90;
+        }
+
+        header {
+            background: #519a90;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 20px;
+            background: #f0f0f0;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #34495e;
+        }
+
+        .hotel-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .hotel-item {
+            background: #519a90;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px;
+            flex-basis: 30%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .hotel-item h3 {
+            margin: 0 0 10px;
+            color: #2980b9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #519a90;
+            color: #519a90;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .hotel-item {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Online Hotel Reservation System</h1>
+        <nav>
+            <ul>
+                <li><a href="registration.html">Registration</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="booking_payment.html">Booking</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Welcome to Our Hotel Booking System</h2>
+        <p>Find the perfect hotel for your stay. Choose from a variety of options to suit your needs.</p>
+        
+        <div class="hotel-list">
+            <div class="hotel-item">
+                <h3>Hotel Sunshine</h3>
+                <p>Located in the heart of the city, Hotel Sunshine offers luxurious rooms and amenities.</p>
+            </div>
+            <div class="hotel-item">
+                <h3>Mountain Retreat</h3>
+                <p>A peaceful escape in the mountains, perfect for nature lovers and adventurers.</p>
+            </div>
+            <div class="hotel-item">
+                <h3>Beachside Resort</h3>
+                <p>Enjoy stunning ocean views and beach access at this family-friendly resort.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; Online Hotel Reservation System</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #519a90;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #343a40;
+        }
+        h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        p {
+            line-height: 1.6;
+            color: #495057;
+        }
+        .feedback-form {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            background-color: #e9ecef;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #495057;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .contact-info {
+            margin-top: 30px;
+            padding: 20px;
+            border-top: 1px solid #ced4da;
+            text-align: center;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #6c757d;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            margin: 20px 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Thank You for Your Booking!</h1>
+        <h2>We Value Your Feedback</h2>
+        <p>Your stay means a lot to us, and we would love to hear about your experience. Please share your thoughts below:</p>
+
+        <!-- Navigation Menu -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="registration.html">Registration</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="booking_payment.html">Booking</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+            </ul>
+        </nav>
+
+        <div class="feedback-form">
+            <label for="feedback">Your Feedback:</label>
+            <textarea id="feedback" placeholder="Share your thoughts..."></textarea>
+            <button id="submitFeedback">Submit Feedback</button>
+        </div>
+
+        <div class="contact-info">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need further assistance, feel free to reach out to us:</p>
+            <p>Email: hrs123@gmail.com</p>
+            <p>Phone: (123) 456-7890</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('submitFeedback').addEventListener('click', function() {
+            const feedback = document.getElementById('feedback').value;
+            if (feedback) {
+                alert('Thank you for your feedback!');
+                document.getElementById('feedback').value = ''; // Clear the textarea
+            } else {
+                alert('Please enter your feedback before submitting.');
+            }
+        });
+    </script>
+</body>
+</html>
